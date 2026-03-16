@@ -18,6 +18,7 @@ public class MyController {
 		System.out.println("openHelloPage() method execute");
 		
 		ModelAndView mav = new ModelAndView();
+		//call to viewResolver with name  
 		mav.setViewName("hello");
 		return null;
 	}
