@@ -12,7 +12,7 @@ public class MyController {
 	/* first way */
 	//@RequestMapping(value = "/helloPage",method = RequestMethod.GET)
 	/* second way */
-	@GetMapping("helloPage")
+	@GetMapping("/helloPage")
 	public ModelAndView OpenHelloPage()
 	{
 		System.out.println("openHelloPage() method execute");
@@ -20,6 +20,12 @@ public class MyController {
 		ModelAndView mav = new ModelAndView();
 		//call to viewResolver with name  
 		mav.setViewName("hello");
-		return null;
+		return mav;
+	}
+	
+	@GetMapping("/about")
+	public String openAboutpage()
+	{
+		return "about";
 	}
 }

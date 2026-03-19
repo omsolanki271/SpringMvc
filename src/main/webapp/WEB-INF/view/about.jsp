@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome To Learn with Om Solanki</h1>
-	<br>
-	<a href="helloPage">OpenHelloPage</a>
-	<br>
-	<a href="about">ABout</a>
+	<h2>Contect No : 9898989898 </h2>
+	<h3>Email : om@gmail.com</h3>
 </body>
 </html>
