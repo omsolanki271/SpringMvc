@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -57,11 +58,19 @@ public class MyController {
 	@PostMapping("/submitForm")
 	public String handleMyform(@RequestParam("username") String uname,
 							 @RequestParam("email") String email,
-							 @RequestParam("mobile") String mobileno) 
+							 @RequestParam("mobile") String mobileno,
+							 Model model
+							 )
+							 
 	{
 		System.out.println(uname);
 		System.out.println(email);
 		System.out.println(mobileno);
+		
+		model.addAttribute("model_uname",uname);
+		model.addAttribute("model_email",email);
+		model.addAttribute("model_mobile",mobileno);
+		
 		return "profile";
 	}
 }
