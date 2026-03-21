@@ -139,9 +139,9 @@ This project is created for **learning Spring MVC basics and interview preparati
 
 ## 👨‍💻 Author
 
-**Om Solanki**
-Java Developer | Spring Learner
-
+**Om Solanki**  
+Java Developer | Spring MVC Learner  
+Passionate about backend development and building web applications.
 
 
 
