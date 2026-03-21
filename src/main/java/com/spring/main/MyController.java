@@ -1,7 +1,11 @@
 package com.spring.main;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,5 +37,18 @@ public class MyController {
 	public String openmyform()
 	{
 		return "my-form";
+	}
+	@PostMapping("/submitForm")
+	public String handlMyform(HttpServletRequest request)
+	{
+		String uname = request.getParameter("username");
+		String email = request.getParameter("email");
+		String mobileno = request.getParameter("mobile");
+		
+		System.out.println(uname);
+		System.out.println(email);
+		System.out.println(mobileno);
+		
+		return "profile";
 	}
 }
