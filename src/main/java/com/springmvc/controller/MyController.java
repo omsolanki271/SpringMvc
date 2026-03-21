@@ -1,4 +1,4 @@
-package com.spring.main;
+package com.springmvc.controller;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +19,11 @@ import com.spring.bean.User;
 @Controller
 public class MyController {
 
+	@GetMapping("/")
+	public String home() {
+	    return "index";
+	}
+	
 	/* first way */
 	// @RequestMapping(value = "/helloPage",method = RequestMethod.GET)
 	/* second way */
@@ -105,7 +110,7 @@ public class MyController {
 	
 	
 /* Fourth Way to pass data */
-//use model attribut and direct pass User class
+//use modelattribute and direct pass User class
 //Note: <input> -> name attribute match with User class variable 
 	
 	@PostMapping("/submitForm")
