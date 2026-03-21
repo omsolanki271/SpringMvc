@@ -28,4 +28,10 @@ public class MyController {
 	{
 		return "about";
 	}
+	
+	@GetMapping("/MyForm")
+	public String openmyform()
+	{
+		return "my-form";
+	}
 }
