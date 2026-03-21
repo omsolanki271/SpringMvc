@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +42,7 @@ public class MyController {
 		return "my-form";
 	}
 
-	/* First Way to pass data (Not use in company- only learning purpose) */
+/* First Way to pass data (Not use in company- only learning purpose) */
 
 	/*
 	 * @PostMapping("/submitForm") public String handleMyform(HttpServletRequest
@@ -55,8 +56,8 @@ public class MyController {
 	 * return "profile"; }
 	 */
 
-	/* Second Way to pass data */
-
+/* Second Way to pass data */
+	
 	/*
 	 * @PostMapping("/submitForm") public String
 	 * handleMyform(@RequestParam("username") String uname,
@@ -76,25 +77,40 @@ public class MyController {
 	 */
 	
 	
-	/* Second Way to pass data */
-	/* (very tuff for every attribute pase so pass Object in other page) */
+/* Thired Way to pass data */
+/* (very tuff for every attribute pase so pass Object in other page) */
 
+	/*
+	 * @PostMapping("/submitForm") public String
+	 * handleMyform(@RequestParam("username") String uname,
+	 * 
+	 * @RequestParam("email") String email,
+	 * 
+	 * @RequestParam("mobile") String mobileno, Model model )
+	 * 
+	 * {
+	 * 
+	 * 
+	 * User user = new User(); user.setUname(uname); user.setEmail(email);
+	 * user.setMobileno(mobileno);
+	 * 
+	 * model.addAttribute("model_user",user);
+	 * 
+	 * System.out.println(user.getUname()); System.out.println(user.getEmail());
+	 * System.out.println(user.getMobileno());
+	 * 
+	 * 
+	 * return "profile"; }
+	 */
+	
+	
+/* Fourth Way to pass data */
+//use model attribut and direct pass User class
+//Note: <input> -> name attribute match with User class variable 
+	
 	@PostMapping("/submitForm")
-	public String handleMyform(@RequestParam("username") String uname,
-							 @RequestParam("email") String email,
-							 @RequestParam("mobile") String mobileno,
-							 Model model
-							 )
-							 
+	public String handleMyform(@ModelAttribute User user)
 	{
-		
-		
-		User user = new User();
-		user.setUname(uname);
-		user.setEmail(email);
-		user.setMobileno(mobileno);
-		
-		model.addAttribute("model_user",user);
 		
 		System.out.println(user.getUname());
 		System.out.println(user.getEmail());

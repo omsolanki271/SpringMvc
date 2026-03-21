@@ -8,9 +8,11 @@
 </head>
 <body>
 	<form action="submitForm" method="post">
-		User Name: <input type="text" name="username" placeholder="Enter your Username" required="required"> <br> <br>
+		<!--MOST IMPORTATNT name attribute match with User Class variable  -->
+		<!-- User Name: <input type="text" name="username" placeholder="Enter your Username" required="required"> <br> <br> -->
+		User Name: <input type="text" name="uname" placeholder="Enter your Username" required="required"> <br> <br>
 		Email id: <input type="email" name="email" placeholder="Enter your email" required="required"> <br> <br>
-		Phone No : <input type="text" name="mobile" placeholder="Enter Mobile NO. " required="required"><br> <br>
+		Phone No : <input type="text" name="mobileno" placeholder="Enter Mobile NO. " required="required"><br> <br>
 		<input type="submit" value="Login" name="submit"> 
 	</form> 
 </body>
