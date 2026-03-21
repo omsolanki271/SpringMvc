@@ -33,7 +33,7 @@ This project is created for **learning + interview preparation** and covers core
 SpringMVC/
 │
 ├── src/
-│   ├── com.spring.main/
+│   ├── com.springmvc.controller/
 │   │   └── MyController.java
 │   │
 │   ├── com.spring.bean/
@@ -42,7 +42,7 @@ SpringMVC/
 ├── WEB-INF/
 │   ├── web.xml
 │   ├── spring-servlet.xml
-│   └── view/
+│   └── views/
 │       ├── hello.jsp
 │       ├── about.jsp
 │       ├── my-form.jsp
@@ -102,7 +102,7 @@ public String handleMyform(@ModelAttribute User user) {
 
 ```xml
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/view/" />
+    <property name="prefix" value="/WEB-INF/views/" />
     <property name="suffix" value=".jsp" />
 </bean>
 ```
