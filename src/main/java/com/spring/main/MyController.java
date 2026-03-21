@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.bean.User;
+
 @Controller
 public class MyController {
 
@@ -55,6 +57,28 @@ public class MyController {
 
 	/* Second Way to pass data */
 
+	/*
+	 * @PostMapping("/submitForm") public String
+	 * handleMyform(@RequestParam("username") String uname,
+	 * 
+	 * @RequestParam("email") String email,
+	 * 
+	 * @RequestParam("mobile") String mobileno, Model model )
+	 * 
+	 * { System.out.println(uname); System.out.println(email);
+	 * System.out.println(mobileno);
+	 * 
+	 * model.addAttribute("model_uname",uname);
+	 * model.addAttribute("model_email",email);
+	 * model.addAttribute("model_mobile",mobileno);
+	 * 
+	 * return "profile"; }
+	 */
+	
+	
+	/* Second Way to pass data */
+	/* (very tuff for every attribute pase so pass Object in other page) */
+
 	@PostMapping("/submitForm")
 	public String handleMyform(@RequestParam("username") String uname,
 							 @RequestParam("email") String email,
@@ -63,13 +87,19 @@ public class MyController {
 							 )
 							 
 	{
-		System.out.println(uname);
-		System.out.println(email);
-		System.out.println(mobileno);
 		
-		model.addAttribute("model_uname",uname);
-		model.addAttribute("model_email",email);
-		model.addAttribute("model_mobile",mobileno);
+		
+		User user = new User();
+		user.setUname(uname);
+		user.setEmail(email);
+		user.setMobileno(mobileno);
+		
+		model.addAttribute("model_user",user);
+		
+		System.out.println(user.getUname());
+		System.out.println(user.getEmail());
+		System.out.println(user.getMobileno());
+		
 		
 		return "profile";
 	}
